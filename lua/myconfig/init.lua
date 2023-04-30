@@ -1,5 +1,5 @@
 require("myconfig.packer")
 require("myconfig.remap")
-require("myconfig.mason")
+require("myconfig.lsp")
 
 
