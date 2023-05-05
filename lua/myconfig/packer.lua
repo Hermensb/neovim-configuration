@@ -23,5 +23,6 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
     }
+    use ({'bignimbus/pop-punk.vim', as = 'pop-punk'})
 
 end)

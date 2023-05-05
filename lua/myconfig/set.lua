@@ -18,5 +18,5 @@ vim.opt.colorcolumn = "100"
 
 vim.opt.termguicolors = true
 
-
+vim.cmd('colorscheme pop-punk')
 
