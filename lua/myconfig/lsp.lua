@@ -30,6 +30,9 @@ local handlers = {
                     plugins = {
                         pycodestyle = {
                             maxLineLength = 100
+                        },
+                        mypy = {
+                            enable = true
                         }
                     }
                 }
@@ -40,8 +43,8 @@ local handlers = {
 
 mason.setup()
 mason_lspconfig.setup{
-	ensure_installed = {},
-	automatic_installation = true,
-	handlers = handlers,
+    ensure_installed = {},
+    automatic_installation = true,
+    handlers = handlers,
 }
 
