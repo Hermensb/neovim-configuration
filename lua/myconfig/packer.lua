@@ -24,5 +24,9 @@ return require('packer').startup(function(use)
         'L3MON4D3/LuaSnip',
     }
     use ({'bignimbus/pop-punk.vim', as = 'pop-punk'})
+    use {
+        'simrat39/rust-tools.nvim',
+        'mfussenegger/nvim-dap',
+    }
 
 end)
