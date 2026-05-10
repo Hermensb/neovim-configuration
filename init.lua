@@ -1,1 +1,3 @@
-require("myconfig")
+require("remap")
+require("set")
+require("lazy")

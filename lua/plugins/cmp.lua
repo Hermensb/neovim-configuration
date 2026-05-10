@@ -9,7 +9,7 @@ return {
       "L3MON4D3/LuaSnip",
     },
     config = function()
-      require("myconfig.code_complete")
+      require("code_complete")
     end,
   },
 }
