@@ -10,8 +10,6 @@ Clone to `~/.config/nvim`, then run `nvim`. lazy.nvim installs automatically.
 | `<Space>fg` | Live grep |
 | `<Space>fb` | Buffers |
 | `<Space>fh` | Help tags |
-| `<C-Space>` | Trigger completion |
-| `<CR>` / `<C-e>` | Confirm / cancel completion |
 
 ## Adding a Plugin
 
