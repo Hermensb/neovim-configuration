@@ -18,6 +18,6 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "pop-punk" } },
+  install = { colorscheme = { "onedark" } },
   checker = { enabled = false },
 })
