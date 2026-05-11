@@ -13,7 +13,8 @@ Clone to `~/.config/nvim`, then run `nvim`. lazy.nvim installs automatically.
 | `cmp-path` | Filepath source for cmp |
 | `LuaSnip` | Snippet engine |
 | `cmp_luasnip` | Snippet source for cmp |
-| `gruvbox-material` | Colorscheme |
+| `plenary.nvim` | Lua utility library (Telescope dependency) |
+| `onedark.nvim` | Colorscheme |
 
 ## Python LSP
 
@@ -89,7 +90,14 @@ vim.diagnostic.config({
     source = 'if_many',
     spacing = 2,
   },
-  -- ...
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+  float = {
+    source = 'always',
+    border = 'single',
+  },
 })
 ```
 
@@ -104,21 +112,27 @@ vim.diagnostic.config({
 
 ## Colorscheme
 
-This config uses **gruvbox-material** with default settings:
-
-| Option | Default | Available Values |
-|--------|---------|-------------------|
-| `background` | `medium` | `hard`, `medium`, `soft` |
-| `palette` | `material` | `material`, `mix`, `original` |
-
-To customize, edit `lua/plugins/gruvbox-material.lua`:
+This config uses **onedark.nvim**:
 
 ```lua
-vim.g.gruvbox_material_background = "hard"  -- higher contrast
-vim.g.gruvbox_material_palette = "mix"      -- alternative color palette
+-- lua/plugins/onedark.lua
+require('onedark').setup({
+  style = 'dark',
+  transparent = false,
+  term_colors = true,
+  ending_tildes = false,
+  code_style = {
+    comments = 'italic',
+    keywords = 'none',
+    functions = 'none',
+    strings = 'none',
+    variables = 'none',
+  },
+})
+require('onedark').load()
 ```
 
-See `:help gruvbox-material.txt` for all options.
+See `:help onedark.nvim` for all options.
 
 ## Adding a Plugin
 
