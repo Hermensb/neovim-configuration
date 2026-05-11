@@ -13,7 +13,7 @@ Clone to `~/.config/nvim`, then run `nvim`. lazy.nvim installs automatically.
 | `cmp-path` | Filepath source for cmp |
 | `LuaSnip` | Snippet engine |
 | `cmp_luasnip` | Snippet source for cmp |
-| `pop-punk.vim` | Colorscheme |
+| `gruvbox-material` | Colorscheme |
 
 ## Python LSP
 
@@ -60,6 +60,9 @@ Available when an LSP client attaches to a Python buffer:
 | `<Space>ca` | Code actions |
 | `<Space>rn` | Rename symbol |
 | `<Space>f` | Format buffer (via ruff) |
+| `[d` | Previous diagnostic |
+| `]d` | Next diagnostic |
+| `<Space>d` | Open diagnostic float (full error message) |
 
 ### Autocompletion (nvim-cmp)
 
@@ -70,6 +73,26 @@ Available when an LSP client attaches to a Python buffer:
 | `<C-y>` | Confirm completion |
 | `<C-Space>` | Trigger completion |
 
+## Diagnostics
+
+Diagnostics are configured to show virtual text at the end of lines:
+
+- **`●` prefix** before each diagnostic message
+- Shows `[source]` (e.g., `[ruff]`, `[mypy]`) when multiple diagnostics on the same line
+- Sorted by severity (errors before warnings)
+
+**Configuration in `lua/set.lua`:**
+```lua
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●',
+    source = 'if_many',
+    spacing = 2,
+  },
+  -- ...
+})
+```
+
 ## General Key Mappings
 
 | Key | Action |
@@ -78,6 +101,24 @@ Available when an LSP client attaches to a Python buffer:
 | `<Space>fg` | Live grep |
 | `<Space>fb` | Buffers |
 | `<Space>fh` | Help tags |
+
+## Colorscheme
+
+This config uses **gruvbox-material** with default settings:
+
+| Option | Default | Available Values |
+|--------|---------|-------------------|
+| `background` | `medium` | `hard`, `medium`, `soft` |
+| `palette` | `material` | `material`, `mix`, `original` |
+
+To customize, edit `lua/plugins/gruvbox-material.lua`:
+
+```lua
+vim.g.gruvbox_material_background = "hard"  -- higher contrast
+vim.g.gruvbox_material_palette = "mix"      -- alternative color palette
+```
+
+See `:help gruvbox-material.txt` for all options.
 
 ## Adding a Plugin
 

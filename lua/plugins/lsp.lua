@@ -23,6 +23,10 @@ return {
           map('<leader>f', function()
             vim.lsp.buf.format({ async = true })
           end, '[F]ormat')
+
+          map('[d', vim.diagnostic.goto_prev, 'Prev [D]iagnostic')
+          map(']d', vim.diagnostic.goto_next, 'Next [D]iagnostic')
+          map('<leader>d', vim.diagnostic.open_float, '[D]iagnostic Float')
         end,
       })
 

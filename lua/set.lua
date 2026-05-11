@@ -21,3 +21,19 @@ vim.opt.colorcolumn = "100"
 
 vim.opt.termguicolors = true
 
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●',
+    source = 'if_many',
+    spacing = 2,
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+  float = {
+    source = 'always',
+    border = 'single',
+  },
+})
+
