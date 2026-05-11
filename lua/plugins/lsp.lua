@@ -60,20 +60,6 @@ return {
         local cmd = vim.list_extend({ python, '-m', 'pip', 'install', '-U' }, packages)
 
         vim.fn.jobstart(cmd, {
-          on_stdout = function(_, data)
-            for _, line in ipairs(data) do
-              if line ~= '' then
-                vim.notify(line, vim.log.levels.INFO)
-              end
-            end
-          end,
-          on_stderr = function(_, data)
-            for _, line in ipairs(data) do
-              if line ~= '' then
-                vim.notify(line, vim.log.levels.WARN)
-              end
-            end
-          end,
           on_exit = function(_, code)
             if code == 0 then
               vim.notify(
