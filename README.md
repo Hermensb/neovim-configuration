@@ -46,7 +46,7 @@ With your venv activated:
 pip install python-lsp-server python-lsp-ruff pylsp-mypy pynvim
 ```
 
-**Restart Neovim** (or run `:LspRestart`) after installation.
+**Restart Neovim** after installation.
 
 ### LSP Key Mappings
 

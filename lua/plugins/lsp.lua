@@ -63,7 +63,7 @@ return {
           on_exit = function(_, code)
             if code == 0 then
               vim.notify(
-                'Successfully installed Python LSP packages. Restart Neovim or run :LspRestart.',
+                'Successfully installed Python LSP packages. Restart Neovim to pick up the changes.',
                 vim.log.levels.INFO
               )
             else
